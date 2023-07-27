@@ -25,13 +25,3 @@ let madera1 = new Madera (
 console.table(maderas);
 
 
-
-let madera2= new Madera ("Laurel", 5, 140, 10,2.5);
-let madera3 = new Madera (
-    prompt("Por favor ingresa el nombre de la madera"),
-    parseFloat(prompt("ingresá la cantidad de listones que necesitas")),
-    parseFloat(prompt("ingresá el largo en cm")),
-    parseFloat(prompt("ingresá el ancho en cm")),
-    parseFloat(prompt("ingresá el grosor en cm"))
-);
-
