@@ -8,13 +8,11 @@ const Madera= function (nombre, cantidad, largo, ancho, grosor){
     this.ancho = ancho;
     this.grosor = grosor;
     this.pies = parseFloat((cantidad * (largo/pie) * (ancho/pulgada) * (grosor/pie)).toFixed(2));
-
-    if (isNaN(this.pies)) {
-        alert("Por favor, ingresá valores numéricos")
-    }
 }
 
 let maderas = []
+let maderaCalculada = maderas.find((el) => el.nombre); 
+let totalPies = maderas.find((los) => los.pies)
 
 alert ("Bienvenido al calculador de Pies de Madera!")
 
@@ -30,7 +28,13 @@ while (calcularOtraMadera) {
         parseFloat(prompt("ingresá el grosor en cm"))
     );
 
-    maderas.push(madera);
+    if (isNaN(madera.cantidad)||isNaN(madera.largo)||isNaN(madera.ancho||isNaN(madera.grosor))) {
+        alert("Por favor, ingresá valores numéricos")
+    } 
+    else {
+        maderas.push(madera)
+        alert(`La cantidad de ${maderaCalculada} que necesitás, son ${totalPies} pies.`)    
+    }
 
     let respuesta = confirm("¿Querés calcular otra madera?")
 
@@ -42,5 +46,7 @@ while (calcularOtraMadera) {
 console.table(maderas);
 
 alert("Muchas gracias!")
+
+
 
 
